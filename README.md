@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to my personal webpage
 
-You can use the [editor on GitHub](https://github.com/sebastjancizel/sebastjancizel.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Everything is still very much under construction around here. I will be updating this website over the coming days/weeks/months. For now enjoy the generic github markup template below. 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
