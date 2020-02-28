@@ -11,3 +11,5 @@ github_username:  sebastjancizel # DO NOT include the @ character, or else the b
 show_excerpts: true # set to false to remove excerpts on the homepage
 
 remote_theme: fongandrew/hydeout
+
+theme: jekyll-theme-minimal
