@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f4f4f4;
+		background: #f4f4f4; 
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3220,7 +3220,7 @@ input, select, textarea {
 					#header .main ul li > a {
 						text-decoration: none;
 						border-bottom: 0;
-						color: #aaaaaa;
+						color: #FF2D2D30 /* #aaaaaa */;
 						overflow: hidden;
 						position: relative;
 						text-indent: 4em;
