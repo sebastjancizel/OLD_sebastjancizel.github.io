@@ -185,11 +185,11 @@ x		}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: #BB86FC !important;
 		}
 
 			a:hover:before {
-				color: #2ebaae !important;
+				color: #BB86FC !important;
 			}
 
 	strong, b {
@@ -2073,8 +2073,8 @@ x		}
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ebaae;
-			box-shadow: inset 0 0 0 1px #2ebaae;
+			border-color: #BB86FC;
+			box-shadow: inset 0 0 0 1px #BB86FC;
 		}
 
 	.select-wrapper {
