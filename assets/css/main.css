@@ -7,10 +7,35 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/**********************************/
-/* Primary purple color: #BB86FC  */
+
+/* Primary purple color: #BB86FC */
 /* Background grey color: #121212 */
-/**********************************/
+/* Article background: #1e1e1e */
+
+/***********************************************/
+/* Color Gradient between background and white */
+/* #121212                                     */
+/* #1e1e1e                                     */
+/* #2a2a2a                                     */
+/* #363636                                     */
+/* #414141                                     */
+/* #4d4d4d                                     */
+/* #595959                                     */
+/* #656565                                     */
+/* #717171                                     */
+/* #7d7d7d                                     */
+/* #888888                                     */
+/* #949494                                     */
+/* #a0a0a0                                     */
+/* #acacac                                     */
+/* #b8b8b8                                     */
+/* #c4c4c4                                     */
+/* #d0d0d0                                     */
+/* #dbdbdb                                     */
+/* #e7e7e7                                     */
+/* #f3f3f3                                     */
+/* #ffffff                                     */
+/***********************************************/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
