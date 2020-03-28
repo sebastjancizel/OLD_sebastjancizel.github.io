@@ -3663,9 +3663,6 @@ x		}
   margin: 1em                    
 }
 
-
-
-
 .article {
   padding: 2em;
   background: #1e1e1e;
@@ -3678,4 +3675,9 @@ x		}
     display: flex;
     flex-direction: column;
   }
-}        
+}
+
+.responsive{
+    		width:250px;
+            height:auto;
+}
