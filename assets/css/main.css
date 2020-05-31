@@ -3621,7 +3621,7 @@ body.is-menu-visible #menu {
 
 .archive {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     grid-gap: 1em;
     grid-auto-flow: dense
     margin: 1em
@@ -3631,7 +3631,6 @@ body.is-menu-visible #menu {
     padding: 2em;
     background: #1e1e1e;
 }
-
 
 /* Single column display for phones */
 @media (max-width: 459px) {
@@ -3644,10 +3643,5 @@ body.is-menu-visible #menu {
 .responsive{
     width:250px;
     height:auto;
-}
-
-
-div.meta > time.published{
-    color: white;
 }
 
