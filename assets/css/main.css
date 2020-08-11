@@ -126,12 +126,11 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 body, input, select, textarea {
 	color: #FFFFFF;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-size: 14pt;
+	font-family:  Helvetica, sans-serif, "Source Sans Pro";
+	font-size: 16pt;
 	font-weight: 400;
 	line-height: 1.75;
 }
-
 
 
 /* These define media queries and do specific settings for different screen sizes
@@ -141,7 +140,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1680px) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 16pt;
 	}
 
 }
@@ -149,7 +148,7 @@ body, input, select, textarea {
 @media screen and (max-width: 1280px) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 16pt;
 	}
 
 }
@@ -157,7 +156,7 @@ body, input, select, textarea {
 @media screen and (max-width: 980px) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 16pt;
 	}
 
 }
@@ -165,7 +164,7 @@ body, input, select, textarea {
 @media screen and (max-width: 736px) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 16pt;
 	}
 
 }
@@ -173,7 +172,7 @@ body, input, select, textarea {
 @media screen and (max-width: 480px) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 16pt;
 	}
 
 }
@@ -233,7 +232,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h2 {
-	font-size: 1.1em;
+	font-size: 1.3em;
 }
 
 h3 {
@@ -2572,7 +2571,7 @@ ul.posts {
 	list-style: none;
 	padding: 0;
 }
-
+fit
 ul.posts li {
 	border-top: dotted 1px rgba(160, 160, 160, 0.3);
 	margin: 1.5em 0 0 0;
@@ -2620,7 +2619,7 @@ ul.posts article header {
 }
 
 ul.posts article header h3 {
-	font-size: 0.7em;
+	font-size: 0.8em;
 	margin-top: 0.125em;
 }
 
