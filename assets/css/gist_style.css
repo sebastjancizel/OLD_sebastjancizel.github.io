@@ -165,7 +165,8 @@ body .gist .pl-ii {
 /* @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono'); */
 
 body .gist .gist-file {
-    margin-bottom: 0;
+    margin-bottom: 1em;
+    margin-top:0;
     border: 1px ;
     border-radius: 5px;
 }
@@ -173,6 +174,8 @@ body .gist .gist-file {
 body .gist .gist-data {
     border-bottom: none;
     border-radius: 5px;
+    max-height: 300px;
+    overflow-y: ;
 }
 
 /* body .gist .blob-wrapper { */

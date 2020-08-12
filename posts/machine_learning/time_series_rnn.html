@@ -1,169 +1,240 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Sebastjan Cizel</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content=
-					"width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="../../assets/css/main.css">
-		<link rel="stylesheet" href="../../assets/css/gist_style.css">
-		<script src=
-					"https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-		<script id="MathJax-script" async src=
-					"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-	</head>
-	<body class="single is-preload">
-		<!-- Wrapper -->
-		<div id="wrapper">
-			<!-- Header -->
-			<header id="header">
-				<h1><a href="../../index.html">Sebastjan Cizel</a></h1>
-				<nav class="links">
-					<ul>
-						<li>
-							<a href="../../about.html">About</a>
-						</li>
-						<li>
-							<a href=
-									"https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
-								cv</a>
-						</li>
-						<li>
-							<a href="../../blog.html">Blog</a>
-						</li>
-					</ul>
-				</nav>
-				<nav class="main">
-					<ul>
-						<li class="menu">
-							<a class="fa-bars" href="#menu" style=
-									  "color:#ffffff">Menu</a>
-						</li>
-					</ul>
-				</nav>
-			</header><!-- Menu -->
-			<section id="menu">
-				<!-- Search -->
-				<section>
-					<form class="search" method="get" action="#">
-						<input type="text" name="query" placeholder="Search">
-					</form>
-				</section><!-- Links -->
-				<section>
-					<ul class="links">
-						<li>
-							<a href="../../about.html"></a>
-							<h3><a href="../../about.html">About</a></h3>
-						</li>
-						<li>
-							<a href="../../about.html"></a>
-							<h3><a href="../../about.html">CV</a></h3>
-						</li>
-						<li>
-							<a href="../../blog.html"></a>
-							<h3><a href="../../blog.html">Blog</a></h3>
-						</li>
-					</ul>
-				</section>
-			</section><!-- Main -->
-			<div id="main">
-				<!-- Post -->
-				<article class="post">
-					<header>
-						<div class="title">
-							<h2>Time series and neural networks I<a href="#"></a></h2>
-							<p>Using neural networks for time series forecasting</p>
-						</div>
-						<div class="meta">
-							<time class="published" datetime="2020-08-10">August 10,
-								2020</time> <a href="#" class="author"><span class=
-																				   "name">Sebastjan</span><img src="../../images/logo.jpg" alt=
-																													""></a>
-						</div>
-					</header>
-					<!-- <span class="image featured"><img src=
-						 "../../images/rnn_forecast.png" alt=""></span> -->
-					<p>The COVID related lockdowns resulted in quite a surge in
-						people picking up new hobbies. My activity of choice was to get
-						to grips with the practical implementations of neural networks
-						in Keras and TensorFlow. And the datasets I usually find most
-						interesting are time series of various sorts it seemed natural
-						to learn about NNs by applying them to try to modelling and
-						forecasting time series. These notes are effectively notes to
-						self I've made along the way.</p>
-					<h3>Time series and sequence models</h3>
-					<p>The basic problem is the following. A simple (univariate)
-						time series is a sequence of numbers \[x_1, x_2, x_3, \dots,
-						x_t, \dots\,.\] The numbers can be anything from daily COVID
-						cases (which we have sadly become all too familiar with) to the
-						daily stock prices on the London Stock Exchange. One thing we
-						want to do with time series is to try and predict the future
-						values based on our knowledge of the past values. Concretely, suppose that we have
-						a week's worth of data (daily profit of a company for example)
-						and want to predict the value of the time series on Monday
-						\[ x_1, x_2, x_3, x_4, x_5, x_6, x_7 \longrightarrow x_8\,.\]
-						There are various statistical models of time series one could
-						apply to this problem, but we’re interested in working with
-						neural nets here.</p>
-					<p>
-						Given that data is sequential it makes sense to use
-						the architecture of neural nets that is good at capturing the time dependence
-						of the data points. Intuitively the more recent the data is, the more likely it is
-						to influence the current and future values. This is why I first wanted to build a
-						recurrent neural network model. RNNs are tailored for working with
-						sequential data. For the technical explanation of RNNs, <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">
-						here is the compulsory
-						reference to Andrej Karpathy’s blog post</a>, where he gives a detailed explanation of the various types of RNNs.
-					</p>
-					<h3> The code</h3>
-					<p>
-					</p>
-					<a>
-						<span class="image fit">
-							<img src="../../images/time_series_examples.png">
-						</span>
-						<div>
-							<script src=
-										"https://gist.github.com/sebastjancizel/977d2e012b0da0598d29f7b3e6a96e7f.js"></script>
-						</div>
-						<footer>
-							<!-- <ul class="stats"> -->
-							<!------------------------------------------------>
-							<!-- These are the icons at the end of the post -->
-							<!------------------------------------------------>
-							<!-- <li>General</li>General -->
-							<!-- <li><a href="#" class="icon solid fa-heart">28</a></li> -->
-							<!-- <li><a href="#" class="icon solid fa-comment">128</a></li> -->
-							<!-- </ul> -->
-						</footer></a>
-				</article>
-			</div><!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li>
-						<a href="https://www.linkedin.com/in/sebastjan-cizel/" class=
-								 "icon brands fa-linkedin"><span class=
-																	   "label">LinkedIn</span></a>
-					</li>
-					<li>
-						<a href="https://github.com/sebastjancizel" class=
-								 "icon brands fa-github"><span class="label">Github</span></a>
-					</li>
-					<li>
-						<a href="sebastjancizel@gmail.com" class=
-								 "icon solid fa-envelope"><span class="label">Email</span></a>
-					</li>
-					<li>
-						<a href="https://www.kaggle.com/sebastjancizel" class=
-								 "fab fa-kaggle"><span class="label">Kaggle</span></a>
-					</li>
-				</ul>
-			</section><!-- Scripts -->
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
-		</div>
-	</body>
+<head>
+	<meta name="viewport" content=
+	"width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/gist_style.css">
+	<style>
+	figcaption {
+	        font-style: italic;
+	        padding: 2px;
+	        text-align: center;
+	}
+	</style>
+	<script src=
+	"https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src=
+	"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<title></title>
+</head>
+<body class="single is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+	<!-- Header -->
+	<header id="header">
+	<h1><a href="../../index.html">Sebastjan Cizel</a></h1>
+	<nav class="links">
+	<ul>
+	<li>
+	<a href="../../about.html">About</a>
+	</li>
+	<li>
+	<a href=
+	"https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
+	cv</a>
+	</li>
+	<li>
+	<a href="../../blog.html">Blog</a>
+	</li>
+	</ul>
+	</nav>
+	<nav class="main">
+	<ul>
+	<li class="menu">
+	<a class="fa-bars" href="#menu" style=
+	"color:#ffffff">Menu</a>
+	</li>
+	</ul>
+	</nav>
+	</header><!-- Menu -->
+	<section id="menu">
+	<!-- Search -->
+	<section>
+	<form class="search" method="get" action="#">
+	<input type="text" name="query" placeholder="Search">
+	</form>
+	</section><!-- Links -->
+	<section>
+	<ul class="links">
+	<li>
+	<a href="../../about.html"></a>
+	<h3><a href="../../about.html">About</a></h3>
+	</li>
+	<li>
+	<a href=
+	"https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
+	</a>
+	<h3><a href=
+	"https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
+	CV</a></h3>
+	</li>
+	<li>
+	<a href="../../blog.html"></a>
+	<h3><a href="../../blog.html">Blog</a></h3>
+	</li>
+	</ul>
+	</section>
+	</section><!-- Main -->
+	<div id="main">
+	<!-- Post -->
+	<article class="post">
+	<header>
+	<div class="title">
+	<h2>Time series and neural networks I<a href="#"></a></h2>
+	<p>Intro and data prep</p>
+	</div>
+	<div class="meta">
+	<time class="published" datetime="2020-08-10">August 10,
+	2020</time> <a href="#" class="author"><span class=
+	"name">Sebastjan</span><img src="../../images/logo.jpg" alt=
+	""></a>
+	</div>
+	</header><!-- <span class="image featured"><img src=
+                                  "../../images/rnn_forecast.png" alt=""></span> -->
+	<p>The COVID related lockdowns resulted in quite a surge in
+	people picking up new hobbies. My activity of choice was to get
+	to grips with the practical implementations of neural networks
+	in Keras and TensorFlow. And the datasets I usually find most
+	interesting are time series of various sorts it seemed natural
+	to learn about NNs by applying them to try to modelling and
+	forecasting time series. These notes are effectively notes to
+	self I've made along the way.</p>
+	<h3>Time series and sequence models</h3>
+	<p>The basic problem is the following. A simple (univariate)
+	time series is a sequence of numbers \[x_1, x_2, x_3, \dots,
+	x_t, \dots\,.\] The numbers can be anything from daily COVID
+	cases to the daily stock prices on the London Stock Exchange.
+	One thing we want to do with time series is to try and predict
+	the future values based on our knowledge of the past values.
+	Concretely, suppose that we have a week's worth of data (daily
+	profit of a company for example) and want to predict the value
+	of the time series on Monday \[ x_1, x_2, x_3, x_4, x_5, x_6,
+	x_7 \longrightarrow x_8\,.\] There are various statistical
+	models of time series one could apply to this problem, but
+	we’re interested in working with neural nets here.</p>
+	<p>Given that data is sequential it makes sense to use the
+	architecture of neural nets that is good at capturing the time
+	dependence of the data points. Intuitively the more recent the
+	data is, the more likely it is to influence the current and
+	future values. This is why I first wanted to build a recurrent
+	neural network model. RNNs are tailored for working with
+	sequential data. For the technical explanation of RNNs,
+	<a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">
+	here is the compulsory reference to Andrej Karpathy’s blog
+	post</a>, where he gives a detailed explanation of the various
+	types of RNNs. This series of posts will be focused on actually
+	implementing the RNNs and use them to model some data. <a href=
+	"https://github.com/sebastjancizel/ml-for-finance/tree/master/time_series">
+	The Jupyter notebook with the code is available on my
+	github.</a></p>
+	<h3>Data preparation</h3>
+	<p>For a first couple of posts we will work with generated
+	data. The reason for this is that in this way we can ensure
+	that there is a good amount of signal present in the data and
+	it'll be easier to observe how different hyperparameters
+	influence the prediction. That's why we begin by generating a
+	time series with a linear trend, seasonality and mixing in some
+	Gaussian noise. The code to generate the series is very simple;
+	it's just adding together a linear trend, a seasonal component
+	and normally distributed noise</p>
+	<div>
+	<script src=
+	"https://gist.github.com/sebastjancizel/977d2e012b0da0598d29f7b3e6a96e7f.js"></script>
+	</div>
+	<p>We'll be using <a href="https://plotly.com/">Plotly</a> to
+	plot the time series, because it's so easy to make nice looking
+	as well as interactive graphs with Plotly.</p>
+	<script src=
+	"https://gist.github.com/sebastjancizel/d327484e1cd7736fbd2eabe1d126fb9c.js"></script>
+	<span class="image fit"></span>
+	<figure>
+	<span class="image fit"><img src=
+	"../../images/time_series_examples.png"></span>
+	<figcaption>
+	<span class="image fit">A linear trend, a seasonal time
+	series and combined series with noise</span>
+	</figcaption>
+	</figure>
+	<p>We have the time series we'll be forecasting and we now move
+	to preprocessing the data that we can feed it into the neural
+	network. We first split the data into train and test parts.
+	Scikit-learn has a function for that but it's easy enough to do
+	by hand in this case. We'll use 80% of the data for
+	training.</p>
+	<script src=
+	"https://gist.github.com/sebastjancizel/2aca15dfb635a25d9c2ef483be0a6b5a.js"></script>
+	<p>The reshaping in line 5 looks innocent enough but it's
+	crucial. The Keras RNN models we'll use expect the input to
+	have three dimensions: number of batches, length of the
+	sequence and number of features. The number of features is 1 in
+	our case since the input is a univariate time series. For a
+	multivariate time series the number of features would be equal
+	to the number of variables in the time series. In our case, the
+	length of the sequence is given by the look_back variable.</p>
+	<p>Finally, we have to window the data. This means that we have
+	to subdivide it into subsequences of fixed length that we will
+	feed in the RNN. To each of these sequences we also have to
+	associate the label, which is the prediction based on the
+	feature window. For a simple sequence \(1,2,3,4,5,6, \dots\),
+	this windowing process means constructing a dataset of the form
+	\[\begin{aligned} 1, 2, 3, 4 &amp;\rightarrow 5\\ 2, 3, 4, 5
+	&amp;\rightarrow 6\\ 3, 4, 5, 6 &amp;\rightarrow 7\\
+	&amp;\vdots \end{aligned}\] The window length in this example
+	is 4. To get to this form, Keras comes with a <code><a href=
+	"https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/TimeseriesGenerator">
+	TimeseriesGenerator</a></code> that takes care of this an
+	produces the windowed dataset and also takes care of the
+	batching. The function on line 14 above returns an instance of
+	the <code>TimeseriesGenerator</code> object, that contains both
+	the batches of windows and corresponding labels and which can
+	be fed into the RNN directly. A curious quirk is that, while it
+	has a <code>__getitem__()</code> method, it doesn't support the
+	slicing operation. This is why we will split the dataset before
+	applying it separately both to the train and test data.</p>
+	<h3>Conclusion</h3>
+	<p>This is it for this first part of the exploration of time
+	series using neural networks. Next, we'll move on to modelling
+	the data with RNNs and explore some systematic methods for
+	tuning the hyperparameters.</p>
+	<footer>
+	<!-- <ul class="stats"> -->
+	<!------------------------------------------------>
+	<!-- These are the icons at the end of the post -->
+	<!------------------------------------------------>
+	<!-- <li>General</li>General -->
+	<!-- <li><a href="#" class="icon solid fa-heart">28</a></li> -->
+	<!-- <li><a href="#" class="icon solid fa-comment">128</a></li> -->
+	<!-- </ul> -->
+	</footer>
+	</article>
+	</div><!-- Footer -->
+	<section id="footer">
+	<ul class="icons">
+	<li>
+	<a href="https://www.linkedin.com/in/sebastjan-cizel/" class=
+	"icon brands fa-linkedin"><span class=
+	"label">LinkedIn</span></a>
+	</li>
+	<li>
+	<a href="https://github.com/sebastjancizel" class=
+	"icon brands fa-github"><span class="label">Github</span></a>
+	</li>
+	<li>
+	<a href="sebastjancizel@gmail.com" class=
+	"icon solid fa-envelope"><span class="label">Email</span></a>
+	</li>
+	<li>
+	<a href="https://www.kaggle.com/sebastjancizel" class=
+	"fab fa-kaggle"><span class="label">Kaggle</span></a>
+	</li>
+	</ul>
+	</section><!-- Scripts -->
+	<script src="../../assets/js/jquery.min.js"></script>
+	<script src="../../assets/js/browser.min.js"></script>
+	<script src="../../assets/js/breakpoints.min.js"></script>
+	<script src="../../assets/js/util.js"></script>
+	<script src="../../assets/js/main.js"></script>
+	</div>
+</body>
 </html>
