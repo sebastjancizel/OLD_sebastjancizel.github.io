@@ -6,11 +6,11 @@
 	<link rel="stylesheet" href="../../assets/css/main.css">
 	<link rel="stylesheet" href="../../assets/css/gist_style.css">
 	<style>
-	       figcaption {
-	               font-style: italic;
-	               padding: 2px;
-	               text-align: center;
-	       }
+	                     figcaption {
+	                             font-style: italic;
+	                             padding: 2px;
+	                             text-align: center;
+	                     }
 	</style>
 	<script src=
 	"https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -171,7 +171,8 @@
 	our case since the input is a univariate time series. For a
 	multivariate time series the number of features would be equal
 	to the number of variables in the time series. In our case, the
-	length of the sequence is given by the look_back variable.</p>
+	length of the sequence is given by the <code>look_back</code>
+	variable.</p>
 	<p>Finally, we have to window the data. This means that we have
 	to subdivide it into subsequences of fixed length that we will
 	feed in the RNN. To each of these sequences we also have to
@@ -183,7 +184,7 @@
 	&amp;\vdots \end{aligned}\] The window length in this example
 	is 4. To get to this form, Keras comes with a <code><a href=
 	"https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence/TimeseriesGenerator">
-	TimeseriesGenerator</a></code> that takes care of this an
+	TimeseriesGenerator</a></code> that takes care of this and
 	produces the windowed dataset and also takes care of the
 	batching. The function on line 14 above returns an instance of
 	the <code>TimeseriesGenerator</code> object, that contains both
