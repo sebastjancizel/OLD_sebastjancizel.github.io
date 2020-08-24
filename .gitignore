@@ -2,3 +2,4 @@
 **/*.icloud
 .idea/
 .stylelintrc.json
+.vscode
