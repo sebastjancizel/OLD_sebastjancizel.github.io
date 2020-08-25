@@ -11,6 +11,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        div#test{
+            min-width: 25em;
+            position:inherit;
+        }
+
+        @media only screen and (max-width: 1280px){
+            #test{
+                display: none;
+            }
+        }
+
+        #sidebar{
+            position:fixed;
+        }
+
+    </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -135,6 +152,7 @@
             <!-- </li> -->
             <!-- </ul> -->
         </div><!-- Sidebar -->
+        <div id="test">
         <section id="sidebar">
             <!-- Intro -->
             <section id="intro">
@@ -203,7 +221,7 @@
                     </li>
                 </ul>
             </section>
-        </section>
+        </section></div>
     </div><!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
