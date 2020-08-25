@@ -11,11 +11,6 @@
 			padding: 2px;
 			text-align: center;
 		}
-
-		pre {
-			overflow-x: scroll;
-			overflow-y: scroll;
-		}
 	</style>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -82,6 +77,7 @@
 				<header>
 					<div class="title">
 						<h2>Arxiv dataset: Publication trends in high energy theoretical physics<a href="#"></a></h2>
+						<p></p>
 					</div>
 					<div class="meta">
 						<time class="published" datetime="2020-08-12">August 25,
@@ -89,165 +85,29 @@
 								src="/images/LOGO.png" alt=""></a>
 					</div>
 				</header>
-				<p>
-					Very recently I came across the <a
-						href="https://blogs.cornell.edu/arxiv/2020/08/05/leveraging-machine-learning-to-fuel-new-discoveries-with-the-arxiv-dataset/">
-						announcement</a>
-					that the metadata of all the articles of the preprint repository Arxiv is available as a dataset on
-					Kaggle.
-					As a PhD student I live on a daily diet of papers published daily on the high energy physics -
-					theory (hep-th) and
-					the differential geometry (math.DG) pages of the Arxiv, I thought it would be interesting to play
-					around with the data
-					to see what the data tells us about the publication habits of theoretical physicists.
-				</p>
-				<p>
-					Since its start in 1991 the scientific community in theoretical physics has more or less completely
-					assimilated the Arxiv
-					in its workflow. More or less every new paper in high energy physics theory first appears as a
-					freely available preprint there
-					before it undergoes the peer review and is published in a journal. For the authors the Arxiv
-					essentially functions as an open review process where the
-					community can read their work and provide feedback (albeit not anonymous). From the point of view of
-					individual researchers,
-					the benefit is that almost the entire body of work of theoretical physics is collected in one place
-					and isn't hiding behind a hefty
-					paywall.
-				</p>
-				<h3>
-					Data analysis
-				</h3>
-				<p>
-					In this analysis I wanted to practice basic data wrangling techniques with Python. The full
-					data set of all the metadata is about 3.3GB in total (metadata of 1.7 million papers), so it's not
-					overwhelming.
-					Nonetheless, sifting out the papers with the hep-th tag makes the code run a bit quicker and it's
-					easier
-					to experiment with on my local computer. The accompanying notebook to this post is <a
-						href="https://github.com/sebastjancizel/arxiv_hep-th_eda">
-						here</a>.
-				</p>
-				<p>
-					I have extracted my dataset from <a href="https://www.kaggle.com/Cornell-University/arxiv">the
-						complete dataset on Kaggle.</a> After some manipulation, which I will post on my Kaggle profile
-					I end up with the hep-th data frame where a sample entry looks like
-				</p>
-				<!-- INSERT PRE HERE-->
-				<pre style="margin:auto;width:50%;">
-id                                                   hep-th/9108028
-submitter                                             Paul Ginsparg
-authors                                               Paul Ginsparg
-title                                Applied Conformal Field Theory
-comments          Lectures given at Les Houches summer session, ...
-journal-ref       Fields, Strings and Critical Phenomena, (Les H...
-categories                                                   hep-th
-abstract            These lectures consisted of an elementary in...
-versions          [{'version': 'v1', 'created': 'Fri, 11 Nov 198...
-authors_parsed                                 [[Ginsparg, Paul, ]]
-upload_date                                              1988-11-11
-				</pre>
-				<h3>
-					General submission trends
-				</h3>
-				<p>
-					The first thing I wanted to know about is simply the general submission trends in hep-th. What is
-					the average number per month? What are the busiest days in a year? How what are the trends?
-					Plotting the monthly submission rates we get this graph:
-				</p>
 				<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
 					src="./arxiv_eda_data/publication_rate.html" name="igraph" width="100%" height="500"></iframe>
-				<p>
-					It's clear that the overall publication rate is trending upwards even though the trend is fairly
-					modest.
-					But the most interesting feature, in my view, is the fact that there is a very well defined peak
-					month
-					every year starting with 2015 &mdash; December. It seems that every year, come December, physicists
-					start
-					clamoring to get their papers in before the new year (I was guilty of that as well with my first
-					paper).
-					In fact, the peak day of 2019 was December 31st. This shows that we must have great holiday plans.
-				</p>
-				<h3>
-					Number of authors
-				</h3>
-				<p>
-					The conventional wisdom is that more and more papers have multiple authors. This always
-					seemed pretty obvious from looking at the submissions list every day but now I have the dataset
-					so I might as well see what's there. Counting the authors on all the papers we get the following
-					distribution.
-				</p>
 				<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
 					src="./arxiv_eda_data/author_number.html" name="igraph" width="100%" height="500"></iframe>
-				<p>
-					So roughly a third of all the submissions has two authors and more than two thirds have multiple
-					authors.
-					However, this doesn't say much about what the trends are. It's straightforward though to compute
-					the percentages of papers with x authors in a given year and plot that.
-				</p>
 				<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
 					src="./arxiv_eda_data/yearly_author_no.html" name="igraph" width="100%" height="500"></iframe>
-				<p>
-					The trends are clearly visible in this plot. It's striking that single author publications accounted
-					for
-					45% of the yearly submissions in 1993 but the number has since fallen to 23%. The proportion of two
-					author
-					papers has stayed pretty much the same throughout, but there was a significant increase in the
-					number of
-					submissions with three and four authors.
-				</p>
-				<h3>
-					Page counts
-				</h3>
-				<p>
-					Finally, let's turn to page counts. This is a bit trickier because the metadata doesn't contain that
-					information
-					explicitly. It does contain comments that frequently include page count. Searching the comments with
-					a regular
-					expression it turns out that 86% of all comments contain the word page preceded by some number.
-					We'll assume
-					that the number gives the number of pages in the paper. This will certainly be wrong in some cases
-					but it
-					does give a useful estimate, since it is common practice to include page count in the comment.
-				</p>
 				<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
 					src="./arxiv_eda_data/pages_number.html" name="igraph" width="100%" height="500"></iframe>
-				<p>
-					The most common number of pages in a paper seems to be around 10, with 75% of the papers being
-					less than 28 pages long. The histogram just shows the data for papers with less than 100 pages.
-					But there are certainly quite a few with much more than that. I was curious to see which paper
-					has as claim to the most number of pages. That turns out to be <a
-						href="https://arxiv.org/abs/1511.08771">
-						1511.08771</a>
-				</p>
-				<pre style="margin:auto;width:50%;">
-id                                                       1511.08771
-submitter                                             Naoki Yamatsu
-authors                                               Naoki Yamatsu
-title             Finite-Dimensional Lie Algebras and Their Repr...
-comments                         1851 pages, 836 tables, no figures
-journal-ref                                                    None
-categories                                            hep-ph hep-th
-abstract            We give information about finite-dimensional...
-versions          [{'version': 'v1', 'created': 'Wed, 25 Nov 201...
-authors_parsed                                 [[Yamatsu, Naoki, ]]
-upload_date                                              2015-11-25
-number_authors                                                    1
-upload_year                                                    2015
-number_pages                                                   1851
-				</pre>
-				<p>
-					This is actually I paper that I came across in my research! It has all the Lie algebra
-					branching rules you'll ever need. And thousands more.
-				</p>
-				<h3>
-					Conclusion
-				</h3>
-				<p>
-					There are several directions one can take this and do more nuanced data exploration with this.
-					I think I will focus back on the complete data set and try to understand that data set in a bit
-					more detail. I am very tempted to use this data set and try to train an RNN to generate hep-th
-					paper titles.
-				</p>
+				<pre>
+						id                                                       1502.00612
+						submitter                                             Clement Pryke
+						authors           BICEP2/Keck and Planck Collaborations: P. A. R...
+						title             A Joint Analysis of BICEP2/Keck Array and Plan...
+						comments          Version updated to match published. Data and f...
+						journal-ref                     Phys. Rev. Lett. 114, 101301 (2015)
+						categories                          astro-ph.CO gr-qc hep-ph hep-th
+						abstract            We report the results of a joint analysis of...
+						versions          [{'version': 'v1', 'created': 'Mon, 2 Feb 2015...
+						authors_parsed    [[BICEP2/Keck, , ], [Collaborations, Planck, ]...
+						upload_date                                              2015-02-02
+						number_authors                                                  279
+						Name: 102645, dtype: object</pre>
+
 				<footer>
 					<!-- <ul class="stats"> -->
 					<!------------------------------------------------>
