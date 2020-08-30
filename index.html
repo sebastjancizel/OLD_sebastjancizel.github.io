@@ -12,24 +12,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
-        div#test{
+        div#test {
             min-width: 25em;
-            position:inherit;
+            position: inherit;
         }
 
-        @media only screen and (max-width: 1280px){
-            #test{
+        @media only screen and (max-width: 1280px) {
+            #test {
                 display: none;
             }
         }
 
-        #sidebar{
-            position:fixed;
+        #sidebar {
+            position: fixed;
         }
-
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.links').load("/assets/boilerplate/links.html");
+        })
+    </script>
 </head>
 
 <body class="is-preload">
@@ -38,20 +47,7 @@
         <!-- Header -->
         <header id="header">
             <h1><a href="/index.html">Sebastjan Cizel</a></h1>
-            <nav class="links">
-                <ul>
-                    <li>
-                        <a href="/about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
-                            CV</a>
-                    </li>
-                    <li>
-                        <a href="/blog.html">Blog</a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="links"></nav>
             <nav class="main">
                 <ul>
                     <li class="menu">
@@ -69,7 +65,7 @@
             </section><!-- Links -->
             <section>
                 <ul class="links">
-                    <li>
+                    <!-- <li>
                         <a href="/about.html"></a>
                         <h3><a href="/about.html">About</a></h3>
                     </li>
@@ -82,18 +78,19 @@
                     <li>
                         <a href="/blog.html"></a>
                         <h3><a href="/blog.html">Blog</a></h3>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
-        </section><!-- Main -->
+        </section>
+        <!-- Main -->
         <div id="main">
             <!-- Post -->
             <article class="post">
                 <header>
                     <div class="title">
                         <h2><a href="/posts/machine_learning/arxiv_eda.html">
-                            Arxiv dataset: Publication trends in high energy physics
-                                </a></h2>
+                                Arxiv dataset: Publication trends in high energy physics
+                            </a></h2>
                     </div>
                     <div class="meta">
                         <time class="published" datetime="2020-08-12">August 25, 2020</time>
@@ -106,7 +103,8 @@
                         height="300"></iframe></a>
                 <p>
                     Recently, the dataset of all the articles on the <a href="https://arxiv.org/">Arxiv</a> was posted
-                    on Kaggle. Let's see what we can find out about the publication trends in theoretical high energy physics.
+                    on Kaggle. Let's see what we can find out about the publication trends in theoretical high energy
+                    physics.
                 </p>
                 <footer>
                     <ul class="actions">
@@ -145,59 +143,55 @@
             </article><!-- Pagination -->
         </div><!-- Sidebar -->
         <div id="test">
-        <section id="sidebar">
-            <!-- Intro -->
-            <section id="intro">
-                <!-- <a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a> -->
-                <header>
-                    <a href="#" class="image featured"><img src="images/LOGO.png"
-                            style="width:50%; margin-left:auto; margin-right:auto;" alt="Calabi-Yau"></a>
-                    <h2>Sebastjan Cizel</h2>
-                    <p>Research student in mathematical physics</p>
-                </header>
-            </section><!-- Mini Posts -->
-            <!-- About -->
-            <section class="blurb">
-                <h3>About</h3>
-                <p>My research focuses on higher dimensional
-                    geometric shapes naturally arising in string
-                    theory. In my spare time I'm trying to combine my
-                    interest in geometry with machine learning.</p>
-                <ul class="actions">
-                    <li>
-                        <a href="/about.html" class="button">Learn
-                            More</a>
-                    </li>
-                </ul>
-            </section><!-- Footer -->
-            <section id="footer">
-                <ul class="icons" style="width:50%; margin-left:auto; margin-right:auto;">
-                    <li>
-                        <a href="https://www.linkedin.com/in/sebastjan-cizel/" class="icon brands fa-linkedin"><span
-                                class="label">
-                                LinkedIn</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/sebastjancizel" class="icon brands fa-github"><span
-                                class="label">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="sebastjancizel@gmail.com" class="icon solid fa-envelope"><span
-                                class="label">Email</span></a>
-                    </li>
-                    <li>
-                        <a href="https://www.kaggle.com/sebastjancizel" class="fab fa-kaggle"><span
-                                class="label">Kaggle</span></a>
-                    </li>
-                </ul>
+            <section id="sidebar">
+                <!-- Intro -->
+                <section id="intro">
+                    <!-- <a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a> -->
+                    <header>
+                        <a href="#" class="image featured"><img src="images/LOGO.png"
+                                style="width:50%; margin-left:auto; margin-right:auto;" alt="Calabi-Yau"></a>
+                        <h2>Sebastjan Cizel</h2>
+                        <p>Research student in mathematical physics</p>
+                    </header>
+                </section><!-- Mini Posts -->
+                <!-- About -->
+                <section class="blurb">
+                    <h3>About</h3>
+                    <p>My research focuses on higher dimensional
+                        geometric shapes naturally arising in string
+                        theory. In my spare time I'm trying to combine my
+                        interest in geometry with machine learning.</p>
+                    <ul class="actions">
+                        <li>
+                            <a href="/about.html" class="button">Learn
+                                More</a>
+                        </li>
+                    </ul>
+                </section><!-- Footer -->
+                <section id="footer">
+                    <ul class="icons" style="width:50%; margin-left:auto; margin-right:auto;">
+                        <li>
+                            <a href="https://www.linkedin.com/in/sebastjan-cizel/" class="icon brands fa-linkedin"><span
+                                    class="label">
+                                    LinkedIn</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sebastjancizel" class="icon brands fa-github"><span
+                                    class="label">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="sebastjancizel@gmail.com" class="icon solid fa-envelope"><span
+                                    class="label">Email</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.kaggle.com/sebastjancizel" class="fab fa-kaggle"><span
+                                    class="label">Kaggle</span></a>
+                        </li>
+                    </ul>
+                </section>
             </section>
-        </section></div>
+        </div>
     </div><!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
