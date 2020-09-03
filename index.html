@@ -30,15 +30,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.links').load("/assets/boilerplate/links.html");
-        })
-    </script>
+    <script src="assets/boilerplate/top_bar.js"></script>
 </head>
 
 <body class="is-preload">
@@ -47,7 +39,10 @@
         <!-- Header -->
         <header id="header">
             <h1><a href="/index.html">Sebastjan Cizel</a></h1>
-            <nav class="links"></nav>
+            <nav class="links">
+                <div id="links">
+                </div>
+            </nav>
             <nav class="main">
                 <ul>
                     <li class="menu">
@@ -58,29 +53,6 @@
         </header><!-- Menu -->
         <section id="menu">
             <!-- Search -->
-            <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search">
-                </form>
-            </section><!-- Links -->
-            <section>
-                <ul class="links">
-                    <!-- <li>
-                        <a href="/about.html"></a>
-                        <h3><a href="/about.html">About</a></h3>
-                    </li>
-                    <li>
-                        <a href="https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
-                        </a>
-                        <h3><a href="https://www.dropbox.com/s/85lr9vltsvzfs7d/CV_CizelSebastjan.pdf?dl=0">
-                                CV</a></h3>
-                    </li>
-                    <li>
-                        <a href="/blog.html"></a>
-                        <h3><a href="/blog.html">Blog</a></h3>
-                    </li> -->
-                </ul>
-            </section>
         </section>
         <!-- Main -->
         <div id="main">
@@ -192,6 +164,10 @@
             </section>
         </div>
     </div><!-- Scripts -->
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
